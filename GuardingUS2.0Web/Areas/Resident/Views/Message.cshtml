@@ -1,0 +1,36 @@
+﻿@*@model GuardingUS30.Models.UserNotificationModel
+
+<div>
+    <h4>My Message</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.notification.title)
+        </dt>
+        <dt class="col-sm-10">
+            @Html.DisplayFor(model => model.notification.title)
+        </dt>
+        <dd class="col-sm-2">
+            <label  class="control-label" >Name</label>
+        </dd>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.user.name)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.notification.message)
+        </dt>
+        <dt class="col-sm-10">
+            @Html.DisplayFor(model => model.notification.message)
+        </dt>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.notification.startDate)
+        </dt>
+        <dt class="col-sm-10">
+            @Html.DisplayFor(model => model.notification.startDate)
+        </dt>
+    </dl>
+</div>
+<div>
+    <a asp-action="SecurityGuardView">Back to List</a>
+</div>
+*@

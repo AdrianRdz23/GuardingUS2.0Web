@@ -1,0 +1,38 @@
+﻿@*@model GuardingUS30.Models.UserModel
+    <head>
+        <style>
+            .center {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 200px;
+                
+            }
+        </style>
+    </head>
+    <div>
+        <h4>Admin View</h4>
+        <hr />
+
+        <h1>Welcome to the GuardingUS App</h1>
+
+        <form asp-controller="Admin" asp-action="Notification2View">
+            <div class="center">
+                <div class="form-group" hidden>
+                    <label asp-for="iduser" class="control-label"></label>
+                    <input asp-for="iduser" class="form-control" />
+                    <span asp-validation-for="iduser" class="text-danger"></span>
+                </div>
+                <button type="submit">Notifications</button>
+            </div>
+        </form>
+        <div class="center">
+            <a asp-controller="Admin" asp-action="AdminCatalog">Administrating Catalogs</a>
+        </div>
+        <div class="center">
+            <a asp-controller="Admin" asp-action="EntrancesExits2View">Exits and Entrances History</a>
+        </div>
+
+    </div>
+
+*@
