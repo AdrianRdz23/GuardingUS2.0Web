@@ -18,11 +18,11 @@ namespace GuardingUS2._0.Models
         [StringLength(50, MinimumLength = 1)]
         [DisplayName("Name needs to be typed correctly")]
         public string Name { get; set; }
-        [Required]
-        public int IdRole { get; set; }
-        [ForeignKey("IdRole")]
-        [ValidateNever]
-        public Role Role { get; set; }
+        //[Required]
+        //public int IdRole { get; set; }
+        //[ForeignKey("IdRole")]
+        //[ValidateNever]
+        //public Role Role { get; set; }
 
         //status of the user
         public byte Status { get; set; }
