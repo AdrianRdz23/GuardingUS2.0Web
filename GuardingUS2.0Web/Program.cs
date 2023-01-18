@@ -53,6 +53,6 @@ app.UseSession();
 app.MapRazorPages();
 app.MapControllerRoute(
     name: "default",
-    pattern: "{area=Admin}/{controller=Home}/{action=Homes}/{id?}");
+    pattern: "{area=Admin}/{controller=User}/{action=Users}/{id?}");
 
 app.Run();
