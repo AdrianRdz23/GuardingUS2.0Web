@@ -1,0 +1,76 @@
+﻿@model GuardingUS2._0.Models.ApplicationUser
+
+<form method="post" asp-action="Upsert" enctype="multipart/form-data">
+<div class="row">
+    <div class="col-md-4">
+        
+            <h2 class="text-primary">@(Model.Email!=null?"Update":"Create") User</h2>
+
+            <input asp-for="Id" hidden/>
+
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Email" class="control-label"></label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PhoneNumber" class="control-label"></label>
+                <input asp-for="PhoneNumber" class="form-control" />
+                <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+            </div>
+@*            <div class="mb-3 col-6">
+                <label asp-for="Role.Id"></label>
+                <select asp-for="Role.Id" asp-items="@Model.RoleList" class="form-select">
+                    <option disabled selected>--Select Category--</option>
+                </select>
+                <span asp-validation-for="Role.Id" class="text-danger"></span>
+            </div>*@
+            <div class="form-group form-check" hidden>
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Status" /> @Html.DisplayNameFor(model => model.Status)
+                </label>
+            </div>
+            <div class="form-group" hidden>
+                <label asp-for="StartDate" class="control-label"></label>
+                <input asp-for="StartDate" class="form-control" />
+                <span asp-validation-for="StartDate" class="text-danger"></span>
+            </div>
+            <div class="form-group" hidden>
+                <label asp-for="ModificationDate" class="control-label"></label>
+                <input asp-for="ModificationDate" class="form-control" />
+                <span asp-validation-for="ModificationDate" class="text-danger"></span>
+            </div>
+            <div class="col-12"></div>
+            @if (Model.Id != null || Model.Id != "")
+            {
+               <button type="submit" class="btn btn-primary" style="width:150px">Update</button>
+
+            }
+            else
+            {
+               <button type="submit" onclick="return ValidateInput()" class="btn btn-primary" style="width:150px">Create</button>
+
+
+            }
+            <a asp-controller="Product" asp-action="Index" class="btn btn-secondary" style="width:150px">
+                Back to List
+            </a>
+            </div>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+</form>
+
+
+    @section Scripts {
+        @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    }

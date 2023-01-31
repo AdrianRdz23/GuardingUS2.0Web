@@ -63,12 +63,14 @@ namespace GuardingUS2._0Web.Areas.Admin.Controllers
             {
                 if (obj.Home.Id == 0)
                 {
+                    obj.Home.StartDate = DateTime.Now;
                     _unitOfWork.Home.Add(obj.Home);
                     _unitOfWork.Save();
                     TempData["success"] = "Product created successfully";
                 }
                 else
                 {
+                    obj.Home.ModificationDate = DateTime.Now;
                     _unitOfWork.Home.Update(obj.Home);
                     _unitOfWork.Save();
                     TempData["success"] = "Product updated successfully";

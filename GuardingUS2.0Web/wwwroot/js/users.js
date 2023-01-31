@@ -4,8 +4,8 @@ $(document).ready(function () {
     loadDataTable();
 });
 
-function loadDataTable(url) {
-    dataTable = $('#tblData').DataTable({
+function loadDataTable() {
+    dataTable = $('#tblData2').DataTable({
         "ajax": {
             "url": "/Admin/User/GetAll"
         },

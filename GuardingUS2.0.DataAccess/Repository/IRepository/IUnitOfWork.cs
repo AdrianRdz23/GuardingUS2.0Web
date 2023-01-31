@@ -15,7 +15,9 @@ namespace GuardingUS2._0.DataAccess.Repository.IRepository
         IApplicationUserRespository ApplicationUser { get; }
         IUserNotificationRepository UserNotification { get; }
         IVisitorRepository Visitor { get; }
+        IIdentityRoleRepository IdentityRole { get; }
 
+        IIdentityUserRepository IdentityUser { get; }
 
 
         void Save();

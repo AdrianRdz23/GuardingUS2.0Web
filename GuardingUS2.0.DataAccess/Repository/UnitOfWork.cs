@@ -20,6 +20,8 @@ namespace GuardingUS2._0.DataAccess.Repository
             ApplicationUser = new ApplicationUserRepository(_db);
             UserNotification = new UserNotificationRepository(_db);
             Visitor = new VisitorRepository(_db);
+            IdentityRole = new IdentityRoleRepository(_db);
+            IdentityUser = new IdentityUserRepository(_db);
 
         }
 
@@ -27,9 +29,13 @@ namespace GuardingUS2._0.DataAccess.Repository
         public INotificationRepository Notification { get; private set; }
         public IRoleRepository Role { get; private set; }
         public IApplicationUserRespository ApplicationUser { get; private set; }
+
         public IUserNotificationRepository UserNotification { get; private set; }
         public IVisitorRepository Visitor { get; private set; }
 
+        public IIdentityRoleRepository IdentityRole { get; private set; }
+
+        public IIdentityUserRepository IdentityUser { get; private set; }
 
         public void Save()
         {

@@ -25,5 +25,9 @@ namespace GuardingUS2._0.DataAccess
 
         public DbSet<ApplicationUser> ApplicationUsers { get; set; }
 
+        public DbSet<IdentityRole> IdentityRoles { get; set; }
+
+        public DbSet<IdentityUser> IdentityUsers { get; set; }
+
     }
 }
